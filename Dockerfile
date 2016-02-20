@@ -3,7 +3,7 @@ MAINTAINER Alexander Trost <galexrt@googlemail.com>
 
 ENV DATA_PATH="/data"
 
-ADD entrypoint-win.sh /entrypoint.sh
+ADD entrypoint.sh /entrypoint.sh
 
 RUN dnf -q upgrade -y && \
     dnf install curl ca-certificates glibc.i686 libstdc++.i686 python python-dev \
