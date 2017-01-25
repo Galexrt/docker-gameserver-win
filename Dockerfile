@@ -1,4 +1,4 @@
-FROM fedora:24
+FROM fedora:25
 MAINTAINER Alexander Trost <galexrt@googlemail.com>
 
 ENV DATA_PATH="/data"
