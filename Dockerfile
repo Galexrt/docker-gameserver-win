@@ -3,8 +3,6 @@ MAINTAINER Alexander Trost <galexrt@googlemail.com>
 
 ENV DATA_PATH="/data"
 
-ADD entrypoint.sh /entrypoint.sh
-
 RUN dnf -q upgrade -y && \
     dnf install -y curl ca-certificates glibc.i686 libstdc++.i686 python \
         curl wine xorg-x11-server-Xvfb && \
@@ -13,6 +11,8 @@ RUN dnf -q upgrade -y && \
         /tmp/* \
         /var/tmp/* \
         /usr/share/locale/*
+
+COPY entrypoint.sh /entrypoint.sh
 
 VOLUME ["$DATA_PATH"]
 WORKDIR "$DATA_PATH"
