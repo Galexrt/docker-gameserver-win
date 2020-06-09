@@ -1,4 +1,4 @@
-FROM fedora:25
+FROM fedora:32
 LABEL maintainer="Alexander Trost <galexrt@googlemail.com>"
 
 ENV DATA_PATH="/data"
@@ -13,6 +13,8 @@ RUN dnf -q upgrade -y && \
         /usr/share/locale/*
 
 COPY entrypoint.sh /entrypoint.sh
+
+RUN chmod 755 /entrypoint.sh
 
 VOLUME ["$DATA_PATH"]
 WORKDIR "$DATA_PATH"
